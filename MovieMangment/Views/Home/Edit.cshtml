@@ -1,0 +1,65 @@
+﻿@model MovieMangment.Models.user
+<html>
+<head>
+    <title>Create Record</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="/Home/AfterEdit" method="post">
+        <div class="container" style="margin:70px">
+            <br />
+            <center>
+                <div class="table-responsive">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <table class="table table-bordered text-center">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Name
+                                </td>
+                                <td>
+                                    <input type="text" name="Name" value="@Model.Name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Email
+                                </td>
+                                <td>
+                                    <input type="text" name="Email" value="@Model.Email" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Dob
+                                </td>
+                                <td>
+                                    <input type="number" name="Birtdate" value="@Model.Birtdate" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Password
+                                </td>
+                                <td>
+                                    <input type="text" name="Password" value="@Model.Password" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <input type="submit" name="subBtn" value="Save Changes" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+        </div>
+    </form>
+</body>
+</html>

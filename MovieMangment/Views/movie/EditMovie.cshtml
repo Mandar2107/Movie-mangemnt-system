@@ -1,0 +1,65 @@
+﻿@model MovieMangment.Models.Movie
+<html>
+<head>
+    <title>Create Record</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="/movie/AfterEditMovie" method="post">
+        <div class="container" style="margin:70px">
+            <br />
+            <center>
+                <div class="table-responsive">
+                    <input type="hidden" name="Movie_Id" value="@Model.Movie_Id" />
+                    <table class="table table-bordered text-center">
+                        <tbody>
+                            <tr>
+                                <td>
+                                  movie  Name
+                                </td>
+                                <td>
+                                    <input type="text" name="M_Name" value="@Model.M_Name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Actor
+                                </td>
+                                <td>
+                                    <input type="text" name="Actor" value="@Model.Actor" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Actress
+                                </td>
+                                <td>
+                                    <input type="text" name="Actress" value="@Model.Actress" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Rating
+                                </td>
+                                <td>
+                                    <input type="number" name="Rating" value="@Model.Rating" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <input type="submit" name="subBtn" value="Save Changes" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+        </div>
+    </form>
+</body>
+</html>

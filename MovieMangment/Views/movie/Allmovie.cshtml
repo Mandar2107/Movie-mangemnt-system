@@ -1,0 +1,55 @@
+﻿@model List<MovieMangment.Models.Movie>
+<html>
+<head>
+    <title>user MVc</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <a class="btn btn-danger" href="/Home/Index">Logout</a>
+    <div class="container" style="margin:70px">
+        <a class="btn btn-primary" href="/movie/CreateMovie">Add Movie</a>
+        <br /> <br />
+        <center>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Actor</th>
+                            <th>Actress</th>
+                            <th>Rating</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Movie_Id</td>
+                                <td>@item.M_Name</td>
+                                <td>@item.Actor</td>
+                               
+                                <td>@item.Actress</td>
+                                <td>@item.Rating</td>
+                              
+
+                                <td>
+                                    <a class="btn btn-warning" href="/movie/EditMovie/@item.Movie_Id">Update</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="/movie/DeleteMovie/@item.Movie_Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+﻿@model List<MovieMangment.Models.user>
+<html>
+<head>
+    <title>user MVc</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <a class="btn btn-danger" href="/Home/Index">Logout</a>
+    <div class="container" style="margin:70px">
+        <a class="btn btn-primary" href="/Home/Create">Add Director</a>
+        <br /> <br />
+        <center>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Dob</th>
+                            <th>Password</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td>@item.Birtdate</td>
+                                <td>@item.Password</td>
+
+                                <td>
+                                    <a class="btn btn-warning" href="/Home/Edit/@item.Id">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="/Home/Delete/@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
+
